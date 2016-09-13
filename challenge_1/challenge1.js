@@ -25,3 +25,14 @@ function getText() {
 function setText(text) {
   return $('#save-me').val(text);
 }
+
+
+$('#save-button').click(function() {
+
+	localStorage.setItem('savedText', getText());
+})
+
+$('#load-button').click(function() {
+
+	setText(localStorage.getItem('savedText'));
+})
