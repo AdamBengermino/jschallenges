@@ -71,7 +71,7 @@ shootButtonTwo.click(function(){
    $('#teamtwo-numshots').html(counter2);
    var result = getRandomIntInclusive();
    if (result ==1){
-       $('body').css('background-image', 'URL(http://www.imgbase.info/images/safe-wallpapers/sports/soccer/25685-sports_arsenal_fc_wallpaper.jpg');
+       $('body').css('background-image', 'URL(http://eskipaper.com/images/arsenal-fc-7.jpg');
        alert("SCORE!")
        teamTwoHits++;
        $('#teamtwo-numhits').html(teamTwoHits);
