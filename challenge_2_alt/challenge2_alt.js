@@ -28,8 +28,77 @@
  *   and how to use it in JS. You will also need to download a sound bite
  */
 
- $(function(){
+
+$(function(){
+var shootButtonOne = $('#teamone-shoot');
+var shootButtonTwo = $('#teamtwo-shoot');
+var resetButton = $('#reset');
+var counter1 = 0;
+var counter2 = 0;
+var resetCounter = 0;
+var teamOneHits = 0;
+var teamTwoHits = 0;
+
+
+function getRandomIntInclusive() {
+min = Math.ceil(0);
+max = Math.floor(1);
+return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 
 
- })
+shootButtonOne.click(function(){
+   counter1++;
+   $('#teamone-numshots').html(counter1);
+   var result = getRandomIntInclusive();
+   if (result ==1){
+       $('body').css('background-image', 'URL(http://cdn.wallpapersafari.com/22/26/pu9ioM.jpg');
+       alert("SCORE!")
+       teamOneHits++;
+       $('#teamone-numhits').html(teamOneHits);
+}
+else {
+       $('body').css('background-image','URL(http://www.desktopimages.org/pictures/2014/0103/1/orig_480130.jpg');
+       alert("Miss :(")
+}
+
+});
+
+
+shootButtonTwo.click(function(){
+   counter2++;
+   $('#teamtwo-numshots').html(counter2);
+   var result = getRandomIntInclusive();
+   if (result ==1){
+       $('body').css('background-image', 'URL(http://www.imgbase.info/images/safe-wallpapers/sports/soccer/25685-sports_arsenal_fc_wallpaper.jpg');
+       alert("SCORE!")
+       teamTwoHits++;
+       $('#teamtwo-numhits').html(teamTwoHits);
+}
+else {
+       $('body').css('background-image','URL(http://www.desktopimages.org/pictures/2014/0103/1/orig_480130.jpg');
+       alert("Miss :(")
+}
+
+});
+
+resetButton.click(function(){
+   $('body').css('background-image','URL(http://www.desktopimages.org/pictures/2014/0103/1/orig_480130.jpg');
+   resetCounter++;
+   counter1 = 0;
+   counter2 = 0;
+   teamOneHits = 0;
+   teamTwoHits = 0;
+   $('#num-resets').html(resetCounter)
+   $('#teamone-numshots').html(counter1);
+   $('#teamtwo-numshots').html(counter2);
+   $('#teamone-numhits').html(teamOneHits);
+   $('#teamtwo-numhits').html(teamTwoHits);
+});
+
+
+
+
+
+})
